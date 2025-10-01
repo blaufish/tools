@@ -27,13 +27,18 @@ def output(object_bin, decode):
         object_str = object_bin.decode(decode)
         print(f"{object_str}", end="")
 
+def skip_header(object_bin):
+    seek = 0
+    while object_bin[seek] != 0:
+        seek = seek + 1
+    return object_bin[seek+1:]
+
 def is_object(object_bin, object_type): # peek, taste, the object header
     object_type_bin = object_type.encode("utf-8")
     return object_bin.startswith(object_type_bin)
 
 def output_tree(object_bin):
     seek = 0
-    # skip object header
     while object_bin[seek] != 0:
         seek = seek + 1
     seek = seek + 1
@@ -64,6 +69,7 @@ def main():
     parser.add_argument('--debug-sha', action=argparse.BooleanOptionalAction, default=False)
     parser.add_argument('--decode-tree', action=argparse.BooleanOptionalAction, default=False)
     parser.add_argument('--decode', default=None)
+    parser.add_argument('--skip-header', action=argparse.BooleanOptionalAction, default=False)
     args = parser.parse_args()
 
     object_bin = read_file(args.file, args.debug_bin, args.debug_sha)
@@ -71,6 +77,9 @@ def main():
     if args.decode_tree and is_object(object_bin, "tree"):
         output_tree(object_bin)
         return
+
+    if args.skip_header:
+        object_bin = skip_header(object_bin)
 
     output(object_bin, args.decode)
 
