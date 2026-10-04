@@ -125,6 +125,7 @@ java -XX:+UseContainerSupport -XX:MaxRAMPercentage=85.0 -jar /opt/mkgmap/mkgmap.
     --series-name="OSM Topo Hiking - ${COUNTRY}" \
     --family-name="Topo ${COUNTRY}" \
     --area-name="${COUNTRY}" \
+    --description="OSM ${COUNTRY} Topo Hiking" \
     --draw-priority=25 \
     --show-profiles \
     --process-destination \
