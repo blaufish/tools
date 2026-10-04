@@ -130,7 +130,7 @@ java -XX:+UseContainerSupport -XX:MaxRAMPercentage=85.0 -jar /opt/mkgmap/mkgmap.
     --show-profiles \
     --process-destination \
     --process-exits \
-    -c template.args lonlat_contour*.pbf
+    -c template.args lonlat_contour*.pbf /app/hiking.typ
 
 # Move compiled map to /work root
 OUTPUT_FILE="/work/${COUNTRY_LOWER}_topo_hiking.img"

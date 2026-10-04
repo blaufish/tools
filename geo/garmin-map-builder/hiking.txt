@@ -1,0 +1,36 @@
+[_header]
+FID=6500
+PID=1
+CodePage=1252
+[end]
+
+; --- Major Contour Line (0x22) ---
+[_line]
+Type=0x22
+UseOrientation=N
+LineWidth=2
+Xpm="0 0 1 0"
+"1 c #8B4513"
+String1=0x04,Major Contour
+[end]
+
+; --- Minor Contour Line (0x20) ---
+[_line]
+Type=0x20
+UseOrientation=N
+LineWidth=1
+Xpm="0 0 1 0"
+"1 c #D2691E"
+String1=0x04,Minor Contour
+[end]
+
+; --- Hiking Trail / Path (0x16 - High-visibility red/white line) ---
+[_line]
+Type=0x16
+UseOrientation=N
+LineWidth=3
+Xpm="0 0 2 0"
+"1 c #FF0000"
+"2 c #FFFFFF"
+String1=0x04,Hiking Trail
+[end]
