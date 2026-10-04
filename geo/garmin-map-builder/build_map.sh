@@ -114,6 +114,7 @@ java -XX:+UseContainerSupport -XX:MaxRAMPercentage=85.0 -jar /opt/splitter/split
 echo "Compiling Garmin map image (OSM tiles + contour tiles)..."
 java -XX:+UseContainerSupport -XX:MaxRAMPercentage=85.0 -jar /opt/mkgmap/mkgmap.jar \
     --max-jobs="$SAFE_JOBS" \
+    --style-file=/app/style \
     --latin1 \
     --route \
     --add-pois-to-lines \

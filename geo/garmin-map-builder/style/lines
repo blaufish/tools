@@ -1,0 +1,11 @@
+# --- SAC Scale Trail Mappings ---
+highway=path & sac_scale=hiking [0x16 resolution 24]
+highway=path & sac_scale=mountain_hiking [0x1b resolution 24]
+highway=path & (sac_scale=alpine_hiking | sac_scale=demanding_alpine_hiking) [0x1d resolution 24]
+
+# Fallbacks
+highway=path [0x16 resolution 24]
+highway=footway [0x16 resolution 24]
+
+# --- Include default roads, contours, and water lines ---
+include 'lines' from default;

@@ -7,7 +7,6 @@ CodePage=1252
 ; --- Major Contour Line (0x22) ---
 [_line]
 Type=0x22
-UseOrientation=N
 LineWidth=2
 Xpm="0 0 1 0"
 "1 c #8B4513"
@@ -17,20 +16,35 @@ String1=0x04,Major Contour
 ; --- Minor Contour Line (0x20) ---
 [_line]
 Type=0x20
-UseOrientation=N
 LineWidth=1
 Xpm="0 0 1 0"
 "1 c #D2691E"
 String1=0x04,Minor Contour
 [end]
 
-; --- Hiking Trail / Path (0x16 - High-visibility red/white line) ---
+; --- Default Trail (0x16) ---
 [_line]
 Type=0x16
-UseOrientation=N
 LineWidth=3
-Xpm="0 0 2 0"
+Xpm="0 0 1 0"
 "1 c #FF0000"
-"2 c #FFFFFF"
 String1=0x04,Hiking Trail
+[end]
+
+; --- Mountain Trail (0x1b) ---
+[_line]
+Type=0x1b
+LineWidth=3
+Xpm="0 0 1 0"
+"1 c #FF8C00"
+String1=0x04,Mountain Trail
+[end]
+
+; --- Alpine Trail (0x1d) ---
+[_line]
+Type=0x1d
+LineWidth=2
+Xpm="0 0 1 0"
+"1 c #FF00FF"
+String1=0x04,Alpine Trail
 [end]

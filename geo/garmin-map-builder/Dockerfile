@@ -43,6 +43,7 @@ COPY build_map.sh /app/build_map.sh
 RUN chmod +x /app/build_map.sh
 
 COPY hiking.txt /app/hiking.txt
+COPY style/ /app/style/
 # Compile TYP file first if hiking.txt exists
 RUN java -jar /opt/mkgmap/mkgmap.jar --family-id=6500 --product-id=1 hiking.txt
 
